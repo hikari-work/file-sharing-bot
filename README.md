@@ -488,7 +488,7 @@ This project is licensed under the GNU General Public License v3.0 - see the [LI
 
 ## ⭐ Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=yourusername/forcesub-bot&type=Date)](https://star-history.com/#yourusername/forcesub-bot&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=hikari-work/file-sharing-bot&type=Date)](https://star-history.com/#hikari-work/file-sharing-bot&Date)
 
 ---
 
