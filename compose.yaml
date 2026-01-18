@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  forcesub-bot:
+    build: .
+    container_name: forcesub-bot
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      - MAX_HEAP=${MAX_HEAP:-512m}
+      - MIN_HEAP=${MIN_HEAP:-256m}
+      - YOUNG_GEN=${YOUNG_GEN:-128m}
+      - JAVA_OPTS=${JAVA_OPTS:--XX:+UseStringDeduplication -XX:+OptimizeStringConcat}
+
+      - SPRING_APPLICATION_NAME=force-sub
+
+      - SPRING_DATA_MONGODB_URI=${MONGODB_URI:-mongodb://localhost:27017/forcesub?minPoolSize=5&maxPoolSize=100&maxIdleTimeMS=30000}
+
+      - BOT_TOKEN=${BOT_TOKEN}
+
+      - TELEGRAM_API_ID=${TELEGRAM_API_ID:-}
+      - TELEGRAM_API_HASH=${TELEGRAM_API_HASH:-}
+
+      - DEFAULT_DATABASE_ID=${DEFAULT_DATABASE_ID:--1002161694809}
+      - FORCESUB_SUBSCRIPTION_TTL_MINUTES=${FORCESUB_SUBSCRIPTION_TTL_MINUTES:-2}
+      - ADMIN_ID=${ADMIN_ID:-5761795187}
+    volumes:
+      - ./td-bot:/app/td-bot
+    network_mode: host

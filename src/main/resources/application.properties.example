@@ -1,0 +1,6 @@
+spring.application.name=force-sub
+spring.mongodb.uri=
+bot.token=
+default.database.id=
+forcesub.subscription.ttl.minutes=2
+admin.id=5761795187
