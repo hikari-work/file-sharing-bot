@@ -2,13 +2,11 @@ FROM eclipse-temurin:21-jre
 
 WORKDIR /app
 
-RUN addgroup -S spring && adduser -S spring -G spring
 
 COPY target/*.jar app.jar
 
 RUN chown spring:spring app.jar
 
-USER spring:spring
 
 EXPOSE 8080
 
