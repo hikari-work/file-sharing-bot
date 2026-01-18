@@ -2,8 +2,6 @@ FROM eclipse-temurin:21-jre
 
 WORKDIR /app
 
-RUN apk add --no-cache wget
-
 RUN addgroup -S spring && adduser -S spring -G spring
 
 COPY target/*.jar app.jar
